@@ -66,7 +66,7 @@ do
 
 			printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 			echo ""
-			/home/joe/bash/BashMenu/appSearch.bash
+			/home/ec2-user/BashMenu/appSearch.bash
 			echo ""
 			printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
                         echo""
@@ -80,7 +80,7 @@ do
 		;;
 
 		w)
-			/home/joe/bash/BashMenu/MainMenu.bash
+			//home/ec2-user/BashMenu/MainMenu.bash
 
 		;;	
 		*)

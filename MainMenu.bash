@@ -28,14 +28,14 @@ do
 	# case statement
 	case ${choice} in
 		1)
-			/home/joe/bash/BashMenu/AdminMenu.bash
+			/home/ec2-user/BashMenu/AdminMenu.bash
 	
 			read -p "Please press [Enter] to continue" readEnterKey
 		;;
 
 		2)
 
-			/home/joe/bash/BashMenu/SecMenu.bash
+			/home/ec2-user/BashMenu/SecMenu.bash
 
 			read -p "Please press [Enter] to continue" readEnterKey
 

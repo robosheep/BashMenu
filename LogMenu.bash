@@ -12,14 +12,15 @@ do
 	clear
 	
 	echo "###################################"
-	echo "######### Sec MENU #################"
+	echo "######### Log MENU #################"
 	echo "###################################"
 	echo ""
-	echo "1) Show last 10 logged in Users"
-	echo "2) Show open Network Sockets"
-	echo "3) Parse Passwd File"
-	echo "4) Search Apache Log"
+	echo "1) Search Apache Log file
+	echo “”
+	echo “2) Run Geolocaltion of Log file
+	echo “”
 	echo "w) Go back to Main menu"
+	echo “”
 	echo "e) Exit the menu"
 
 	# Read in the value from the user
@@ -27,36 +28,17 @@ do
 	echo ""
 	# case statement
 	case ${choice} in
-		1)
-			printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
-                        echo""
-			last -adx -10
-			printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
-                        echo""
-			read -p "Please press [Enter] to continue" readEnterKey
-		;;
-
 		2)
-			printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
-                        echo""
-			netstat -anp --inet|less
-			printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
-                        echo""
-			read -p "Please press [Enter] to continue" readEnterKey
-
-		;;
-
-		3)
 
 			printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
                         echo""
-			/home/ec2-user/BashMenu/parse-passwd2.bash
+			/home/ec2-user/BashMenu/geoip.bash
 			printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
                         echo""
 			read -p "Please press [Enter] to continue" readEnterKey
 		;;
 
-		 4)
+		 1)
 
                         printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
                         echo""
