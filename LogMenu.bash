@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 # Create a bash menu to perform
@@ -7,38 +8,37 @@
 while true
 do
 
-	# Clear the screen to create
-	# a fresh menu
-	clear
-	
+        # Clear the screen to create
+        # a fresh menu
+        clear
+
 	echo "###################################"
-	echo "######### Log MENU #################"
-	echo "###################################"
-	echo ""
-	echo "1) Search Apache Log file
-	echo “”
-	echo “2) Run Geolocaltion of Log file
-	echo “”
-	echo "w) Go back to Main menu"
-	echo “”
-	echo "e) Exit the menu"
+        echo "######### Log MENU #################"
+        echo "###################################"
+        echo " 1) Search Apache Log file"
+        echo " "
+        echo " 2) Run Geolocaltion of Log file"
+        echo " "
+        echo " 3) Print out GeoIP info"
 
-	# Read in the value from the user
-	read -p "Please enter a value[1-3]: " choice
-	echo ""
-	# case statement
-	case ${choice} in
-		2)
+        echo " "
 
-			printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
-                        echo""
-			/home/ec2-user/BashMenu/geoip.bash
-			printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
-                        echo""
-			read -p "Please press [Enter] to continue" readEnterKey
-		;;
+        echo " 4) Tail Apache log"
 
-		 1)
+        echo ""
+
+        echo " w) Go back to MainMenu"
+        echo " "
+        echo " e) Exit the menu"
+
+        echo ""
+        echo ""
+        # Read in the value from the user
+        read -p "Please enter a value[1-3]: " choice
+        echo ""
+        # case statement
+        case ${choice} in
+                1)
 
                         printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
                         echo""
@@ -48,36 +48,86 @@ do
                         read -p "Please press [Enter] to continue" readEnterKey
                 ;;
 
+                 2)
 
+                   	printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 
-
-
-
-
-
-
-		e)
-			exit 0
-		
-		;;
-
-		w)
-			/home/ec2-user/BashMenu/MainMenu.bash
-
-		;;	
-		*)
-			printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
                         echo""
-			echo "Invalid value provided! You'll be taken"
-			echo "back to the main menu momentarily"
-			printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
+                        /home/ec2-user/BashMenu/geoip.bash
+                        printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
                         echo""
-			sleep 3
+                        read -p "Please press [Enter] to continue" readEnterKey
+                ;;
 
-		;;
-		
-	# end case statement
-	esac
+
+                3)
+
+                        printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
+
+                        echo""
+                        cat /home/ec2-user/BashMenu/ipinfo.csv
+
+                        printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
+                        echo""
+                        read -p "Please press [Enter] to continue and wipe" readEnterKey
+
+                        printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
+                        echo""
+
+                        rm -rf ips.txt
+                        rm -rf ipinfo.csv
+                        rm -rf uniqips.txt
+                        ls /home/ec2-user/BashMenu/
+
+
+                        printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
+                        echo""
+                        read -p "Please press [Enter] to continue" readEnterKey
+
+                ;;
+
+
+                4)
+                  	printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
+
+
+
+                        echo""
+                        tail /etc/httpd/logs/access_log
+                        printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
+                        echo""
+                        read -p "Please press [Enter] to continue" readEnterKey
+
+
+
+
+                ;;
+
+
+                e)
+                  	exit 0
+
+                ;;
+
+                w)
+                  	bash /home/ec2-user/BashMenu/MainMenu.bash
+
+                ;;
+                *)
+                  	printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
+                        echo""
+                        echo "Invalid value provided! You'll be taken"
+                        echo "back to the main menu momentarily"
+                        printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
+                        echo""
+                        sleep 3
+
+                ;;
+
+        # end case statement
+        esac
 
 # end while loop
 done
+
+

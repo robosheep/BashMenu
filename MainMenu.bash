@@ -19,7 +19,10 @@ do
 	echo ""
 	echo "2) Go to Security Menu."
 	echo ""
-	echo "3) Exit the menu"
+	echo "3) Go to Log Menu"
+        echo ""
+	echo ""
+	echo “e) Exit the menu"
 	echo ""
 	echo ""
 	# Read in the value from the user
@@ -41,7 +44,21 @@ do
 
 		;;
 
+
 		3)
+
+                        /home/ec2-user/BashMenu/LogMenu.bash
+
+                        read -p "Please press [Enter] to continue" readEnterKey
+
+                ;;
+		
+
+
+
+
+
+		e)
 
 			exit 0
 		;;
