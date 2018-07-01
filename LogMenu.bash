@@ -42,7 +42,7 @@ do
 
                         printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
                         echo""
-                        /home/ec2-user/BashMenu/search-a.bash
+                        /home/joe/BashMenu/search-a.bash
                         printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
                         echo""
                         read -p "Please press [Enter] to continue" readEnterKey
@@ -53,7 +53,7 @@ do
                    	printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 
                         echo""
-                        /home/ec2-user/BashMenu/geoip.bash
+                        /home/joe/BashMenu/geoip.bash
                         printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
                         echo""
                         read -p "Please press [Enter] to continue" readEnterKey
@@ -77,7 +77,7 @@ do
                         rm -rf ips.txt
                         rm -rf ipinfo.csv
                         rm -rf uniqips.txt
-                        ls /home/ec2-user/BashMenu/
+                        ls /home/joe/BashMenu/
 
 
                         printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
@@ -93,7 +93,7 @@ do
 
 
                         echo""
-                        tail /etc/httpd/logs/access_log
+                        tail /var/log/apache2/access.log
                         printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
                         echo""
                         read -p "Please press [Enter] to continue" readEnterKey
@@ -110,7 +110,7 @@ do
                 ;;
 
                 w)
-                  	bash /home/ec2-user/BashMenu/MainMenu.bash
+                  	bash /home/joe/BashMenu/MainMenu.bash
 
                 ;;
                 *)

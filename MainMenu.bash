@@ -22,7 +22,7 @@ do
 	echo "3) Go to Log Menu"
         echo ""
 	echo ""
-	echo “e) Exit the menu"
+	echo "e) Exit the menu"
 	echo ""
 	echo ""
 	# Read in the value from the user
@@ -31,14 +31,14 @@ do
 	# case statement
 	case ${choice} in
 		1)
-			/home/ec2-user/BashMenu/AdminMenu.bash
+			/home/joe/BashMenu/AdminMenu.bash
 	
 			read -p "Please press [Enter] to continue" readEnterKey
 		;;
 
 		2)
 
-			/home/ec2-user/BashMenu/SecMenu.bash
+			/home/joe/BashMenu/SecMenu.bash
 
 			read -p "Please press [Enter] to continue" readEnterKey
 
@@ -47,7 +47,7 @@ do
 
 		3)
 
-                        /home/ec2-user/BashMenu/LogMenu.bash
+                        /home/joe/BashMenu/LogMenu.bash
 
                         read -p "Please press [Enter] to continue" readEnterKey
 

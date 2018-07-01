@@ -50,7 +50,7 @@ do
 
 			printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
                         echo""
-			/home/ec2-user/BashMenu/parse-passwd2.bash
+			/home/joe/BashMenu/parse-passwd2.bash
 			printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
                         echo""
 			read -p "Please press [Enter] to continue" readEnterKey
@@ -60,7 +60,7 @@ do
 
                         printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
                         echo""
-                        /home/ec2-user/BashMenu/search-a.bash
+                        /home/joe/BashMenu/search-a.bash
                         printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
                         echo""
                         read -p "Please press [Enter] to continue" readEnterKey
@@ -80,7 +80,7 @@ do
 		;;
 
 		w)
-			/home/ec2-user/BashMenu/MainMenu.bash
+			/home/joe/BashMenu/MainMenu.bash
 
 		;;	
 		*)
